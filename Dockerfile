@@ -1,2 +1,2 @@
-FROM centos:6.3
+FROM centos:centos6 
 CMD "/bin/bash"
