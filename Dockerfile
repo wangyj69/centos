@@ -1,2 +1,3 @@
 FROM centos:centos6 
-CMD "/bin/bash"
+CMD ["/bin/bash"]
+EXPOSE 6379
