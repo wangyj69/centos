@@ -1,3 +1,7 @@
 FROM centos:centos6 
-CMD ["/bin/bash"]
+CMD ["while true
+do
+  echo 1 
+  sleep 600
+done"]
 EXPOSE 6379
