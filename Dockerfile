@@ -1,2 +1,2 @@
 FROM centos:centos6 
-CMD ["while true do echo 1 sleep 600 done"]
+CMD ["/bin/bash","while true do echo 1 sleep 60 done"]
