@@ -14,10 +14,17 @@ rm -rf /tmp/redis-stable* && \
 sed -i 's/^\(bind .*\)$/# \1/' /etc/redis/redis.conf && \
 sed -i 's/^\(daemonize .*\)$/# \1/' /etc/redis/redis.conf && \
 sed -i 's/^\(dir .*\)$/# \1\ndir \/data/' /etc/redis/redis.conf && \
-sed -i 's/^\(logfile .*\)$/# \1/' /etc/redis/redis.conf
+sed -i 's/^\(logfile .*\)$/# \1/' /etc/redis/redis.conf && \
+cd && \
+wget http://download.go.cd/gocd-deb/go-agent-14.2.0-377.deb && \
+apt-get install openjdk-7-jre-headless && \
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64 &&＼
+dpkg -i go-agent-14.2.0-377.deb && \
+sed -i 's/127.0.0.1/192.168.1.216/g' /etc/default/go-agent && \
+/etc/init.d/go-agent start
 # Define mountable directories.
 VOLUME ["/data"]
 # Define working directory.
 WORKDIR /data
 # Define default command.
-CMD ["bash"]
+CMD ["redis-server", "/etc/redis/redis.conf"]
