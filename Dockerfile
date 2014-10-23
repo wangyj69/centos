@@ -23,7 +23,7 @@ RUN \
   sed -i 's/^\(daemonize .*\)$/# \1/' /etc/redis/redis.conf && \
   sed -i 's/^\(dir .*\)$/# \1\ndir \/data/' /etc/redis/redis.conf && \
   sed -i 's/^\(logfile .*\)$/# \1/' /etc/redis/redis.conf && \
-  cd && \
+#  cd && \
   wget http://download.go.cd/gocd-deb/go-agent-14.2.0-377.deb && \
   apt-get update && \
   apt-get install openjdk-6-jdk && \
