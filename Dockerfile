@@ -1,2 +1,2 @@
 FROM centos:centos6
-CMD ["bash"]
+CMD ["/bin/bash"]
