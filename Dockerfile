@@ -29,3 +29,5 @@ VOLUME ["/data"]
 WORKDIR /data
 # Define default command.
 CMD ["redis-server", "/etc/redis/redis.conf"]
+
+EXPOSE 6379
